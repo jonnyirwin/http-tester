@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #4a4a4a;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #5a5a5a;
+}
+
+/* CodeMirror overrides */
+.cm-editor {
+  height: 100%;
+  font-size: 13px;
+}
+
+.cm-editor .cm-scroller {
+  font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+}
+
+.cm-focused {
+  outline: none !important;
+}
+
+/* Drag handle for resizable panels */
+.resize-handle {
+  @apply bg-app-border hover:bg-app-accent transition-colors cursor-col-resize;
+}
+
+/* Input focus styles */
+input:focus,
+select:focus,
+textarea:focus {
+  @apply outline-none ring-1 ring-app-accent;
+}
+
+/* Button styles */
+.btn {
+  @apply px-3 py-1.5 rounded text-sm font-medium transition-colors;
+}
+
+.btn-primary {
+  @apply bg-app-accent text-white hover:bg-app-accent-hover;
+}
+
+.btn-secondary {
+  @apply bg-app-panel text-app-text hover:bg-app-border;
+}
+
+.btn-danger {
+  @apply bg-red-600 text-white hover:bg-red-700;
+}
+
+/* Method colors */
+.method-get { @apply text-green-400; }
+.method-post { @apply text-yellow-400; }
+.method-put { @apply text-blue-400; }
+.method-patch { @apply text-orange-400; }
+.method-delete { @apply text-red-400; }
+.method-head { @apply text-purple-400; }
+.method-options { @apply text-pink-400; }
